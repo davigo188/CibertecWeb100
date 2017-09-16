@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Models", "Cibertec.Models\Cibertec.Models.csproj", "{00B7C042-D694-4731-B338-17BD921532C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Models", "Cibertec.Models\Cibertec.Models.csproj", "{00B7C042-D694-4731-B338-17BD921532C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Repositories", "Cibertec.Repositories\Cibertec.Repositories.csproj", "{FE795F03-44BD-4FAF-B9ED-F9E91B121139}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.RepositoriesTests", "Cibertec.RepositoriesTests\Cibertec.RepositoriesTests.csproj", "{1BB4344D-6B80-48D5-869D-3999040844C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{00B7C042-D694-4731-B338-17BD921532C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00B7C042-D694-4731-B338-17BD921532C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00B7C042-D694-4731-B338-17BD921532C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE795F03-44BD-4FAF-B9ED-F9E91B121139}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE795F03-44BD-4FAF-B9ED-F9E91B121139}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE795F03-44BD-4FAF-B9ED-F9E91B121139}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE795F03-44BD-4FAF-B9ED-F9E91B121139}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BB4344D-6B80-48D5-869D-3999040844C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BB4344D-6B80-48D5-869D-3999040844C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BB4344D-6B80-48D5-869D-3999040844C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BB4344D-6B80-48D5-869D-3999040844C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
