@@ -5,9 +5,19 @@ VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Models", "Cibertec.Models\Cibertec.Models.csproj", "{00B7C042-D694-4731-B338-17BD921532C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Repositories", "Cibertec.Repositories\Cibertec.Repositories.csproj", "{FE795F03-44BD-4FAF-B9ED-F9E91B121139}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Repositories", "Cibertec.Repositories\Cibertec.Repositories.csproj", "{FE795F03-44BD-4FAF-B9ED-F9E91B121139}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.RepositoriesTests", "Cibertec.RepositoriesTests\Cibertec.RepositoriesTests.csproj", "{1BB4344D-6B80-48D5-869D-3999040844C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cibertec.Repositories.EntityFrameworkTests", "Cibertec.RepositoriesTests\Cibertec.Repositories.EntityFrameworkTests.csproj", "{1BB4344D-6B80-48D5-869D-3999040844C7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{38B3DEC2-0B86-4AA5-A0DE-F399FEB1C6FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4BCAB6C1-FDDD-4BA3-B952-B52313292347}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Repositories.EntityFramework", "Cibertec.Repositories.EntityFramework\Cibertec.Repositories.EntityFramework.csproj", "{8592E797-803D-414E-82BD-BF6EA65ABF92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Repositories.Dapper", "Cibertec.Repositories.Dapper\Cibertec.Repositories.Dapper.csproj", "{12FCE19E-51D0-4245-8687-B139B8F78588}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cibertec.Repositories.DapperTests", "Cibertec.Repositories.DapperTests\Cibertec.Repositories.DapperTests.csproj", "{FB9AE892-B2C4-47A3-8944-56D1FE635B51}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,9 +37,29 @@ Global
 		{1BB4344D-6B80-48D5-869D-3999040844C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BB4344D-6B80-48D5-869D-3999040844C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BB4344D-6B80-48D5-869D-3999040844C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8592E797-803D-414E-82BD-BF6EA65ABF92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8592E797-803D-414E-82BD-BF6EA65ABF92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8592E797-803D-414E-82BD-BF6EA65ABF92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8592E797-803D-414E-82BD-BF6EA65ABF92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12FCE19E-51D0-4245-8687-B139B8F78588}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12FCE19E-51D0-4245-8687-B139B8F78588}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12FCE19E-51D0-4245-8687-B139B8F78588}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12FCE19E-51D0-4245-8687-B139B8F78588}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB9AE892-B2C4-47A3-8944-56D1FE635B51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB9AE892-B2C4-47A3-8944-56D1FE635B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB9AE892-B2C4-47A3-8944-56D1FE635B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB9AE892-B2C4-47A3-8944-56D1FE635B51}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{00B7C042-D694-4731-B338-17BD921532C3} = {38B3DEC2-0B86-4AA5-A0DE-F399FEB1C6FB}
+		{FE795F03-44BD-4FAF-B9ED-F9E91B121139} = {38B3DEC2-0B86-4AA5-A0DE-F399FEB1C6FB}
+		{1BB4344D-6B80-48D5-869D-3999040844C7} = {4BCAB6C1-FDDD-4BA3-B952-B52313292347}
+		{8592E797-803D-414E-82BD-BF6EA65ABF92} = {38B3DEC2-0B86-4AA5-A0DE-F399FEB1C6FB}
+		{12FCE19E-51D0-4245-8687-B139B8F78588} = {38B3DEC2-0B86-4AA5-A0DE-F399FEB1C6FB}
+		{FB9AE892-B2C4-47A3-8944-56D1FE635B51} = {4BCAB6C1-FDDD-4BA3-B952-B52313292347}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA846BAC-8AC7-454E-B999-B090DFE2217E}

@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using Xunit;
 
-namespace Cibertec.RepositoriesTests
+namespace Cibertec.Repositories.EntityFrameworkTests
 {
     public class OrderRepositoryTest
     {
@@ -15,12 +15,12 @@ namespace Cibertec.RepositoriesTests
             _context = new NorthwindDBContext();
         }
 
-        [Fact(DisplayName = "[OrderRepository]Get All")]
-        public void Order_Repository_GetAll()
-        {
-            var repo = new RepositoryEF<Order>(_context);
-            var result = repo.GetList();
-            Assert.True(result.Count() > 0);
-        }
+        //[Fact(DisplayName = "[OrderRepository]Get All")]
+        //public void Order_Repository_GetAll()
+        //{
+        //    var repo = new RepositoryEF<Order>(_context);
+        //    var result = repo.GetList();
+        //    Assert.True(result.Count() > 0);
+        //}
     }
 }
