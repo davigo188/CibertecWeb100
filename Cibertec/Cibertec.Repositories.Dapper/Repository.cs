@@ -21,7 +21,6 @@ namespace Cibertec.Repositories.Dapper
             }
         }
 
-
         public T GetById(int id)
         {
             using (var connection = new SqlConnection(_connectionString))

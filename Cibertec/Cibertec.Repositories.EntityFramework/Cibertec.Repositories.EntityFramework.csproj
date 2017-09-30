@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Cibertec.Repositories\Cibertec.Repositories.csproj" />
+    <ProjectReference Include="..\Cibertec.UnitOfWork\Cibertec.UnitOfWork.csproj" />
   </ItemGroup>
 
 </Project>
