@@ -10,6 +10,6 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Cibertec.Repositories.EntityFramework\Cibertec.Repositories.EntityFramework.csproj" />
+    <ProjectReference Include="..\Cibertec.Repositories.Dapper\Cibertec.Repositories.Dapper.csproj" />
   </ItemGroup>
 </Project>
