@@ -30,7 +30,7 @@ namespace Cibertec.MVC.Controllers
         [HttpPost]
         public IActionResult Create(Customer customer)
         {
-            if (_unit.Customers.Insert(customer)>0)
+            if (ModelState.IsValid && _unit.Customers.Insert(customer)>0)
             {
                 return RedirectToAction("Index");
             }
@@ -46,7 +46,7 @@ namespace Cibertec.MVC.Controllers
         [HttpPost]
         public IActionResult Edit(Customer customer)
         {
-            if (customer != null && _unit.Customers.Update(customer))
+            if (ModelState.IsValid && _unit.Customers.Update(customer))
             {
                 return RedirectToAction("Index");
             }
@@ -66,8 +66,9 @@ namespace Cibertec.MVC.Controllers
         [HttpPost]
         public IActionResult Delete(Customer customer)
         {
-            List<Order> order = _unit.Orders.GetList().ToList();
-            return View(_unit.Customers.Delete(customer));
+            // realizar eliminacion de cascada.
+            //List<Order> order = _unit.Orders.GetList().ToList();
+            return View();
         }
 
     }

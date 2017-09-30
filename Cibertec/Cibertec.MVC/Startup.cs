@@ -4,6 +4,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Cibertec.UnitOfWork;
 using Cibertec.Repositories.Dapper.NorthWind;
+using FluentValidation.AspNetCore;
+using FluentValidation;
+using Cibertec.Models;
+using Cibertec.MVC.Validators;
 
 namespace Cibertec.MVC
 {
@@ -26,8 +30,8 @@ namespace Cibertec.MVC
                     
                     )
                 );
-
-            services.AddMvc();
+            services.AddMvc().AddFluentValidation();
+            services.AddTransient<IValidator<Customer>, CustomerValidator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
