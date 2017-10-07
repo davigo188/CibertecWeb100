@@ -4,6 +4,15 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Cibertec.UnitOfWork;
 using Cibertec.Repositories.Dapper.NorthWind;
+using FluentValidation.AspNetCore;
+using FluentValidation;
+using Cibertec.Models;
+using Cibertec.WebApi.Validators;
+using Microsoft.AspNetCore.ResponseCompression;
+using System.IO.Compression;
+using Cibertec.WebApi.Authentication;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Cibertec.WebApi
 {
@@ -26,7 +35,31 @@ namespace Cibertec.WebApi
                     )
                 );
 
-            services.AddMvc();
+            services.AddMvc().AddFluentValidation();
+            services.AddTransient<IValidator<Customer>, CustomerValidator>();
+
+            services.AddResponseCompression();
+            services.Configure<GzipCompressionProviderOptions>(options =>
+                options.Level = CompressionLevel. Optimal);
+
+            var tokenProvider = new RsaJwtTokenProvider("issuer", "audience", "token_cibertec_2017");
+
+            services.AddSingleton<ITokenProvider>(tokenProvider);
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.RequireHttpsMetadata = false;
+                    options.TokenValidationParameters = tokenProvider.GetValidationParameters();
+                });
+
+            services.AddAuthorization(auth =>
+                {
+                    auth.DefaultPolicy = new AuthorizationPolicyBuilder()
+                        .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme)
+                            .RequireAuthenticatedUser()
+                            .Build();
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +69,9 @@ namespace Cibertec.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseResponseCompression();
+
+            app.UseAuthentication();
 
             app.UseMvc();
         }
