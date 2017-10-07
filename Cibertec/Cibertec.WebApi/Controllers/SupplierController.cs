@@ -4,15 +4,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Cibertec.WebApi.Controllers
 {
-    [Produces("application/json")]
     [Route("api/Supplier")]
-    public class SupplierController : Controller
+    public class SupplierController : BaseController
     {
-        private readonly IUnitOfWork _unit;
-
-        public SupplierController(IUnitOfWork unit)
+        public SupplierController(IUnitOfWork unit) : base(unit)
         {
-            _unit = unit;
         }
 
         [HttpGet]

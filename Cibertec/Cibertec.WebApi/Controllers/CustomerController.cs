@@ -4,15 +4,11 @@ using Cibertec.Models;
 
 namespace Cibertec.WebApi.Controllers
 {
-    [Produces("application/json")]
     [Route("api/Customer")]
-    public class CustomerController : Controller
+    public class CustomerController : BaseController
     {
-        private readonly IUnitOfWork _unit;
-
-        public CustomerController(IUnitOfWork unit)
+        public CustomerController(IUnitOfWork unit) : base(unit)
         {
-            _unit = unit;
         }
 
         [HttpGet]
