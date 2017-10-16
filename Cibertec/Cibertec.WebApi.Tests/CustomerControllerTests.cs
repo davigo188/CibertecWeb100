@@ -1,6 +1,5 @@
 using Cibertec.Mocked;
 using Cibertec.Models;
-using Cibertec.Repositories.Dapper.NorthWind;
 using Cibertec.UnitOfWork;
 using Cibertec.WebApi.Controllers;
 using FluentAssertions;
@@ -69,7 +68,7 @@ namespace Cibertec.WebApi.Tests
                 Phone = "7777778"
             };
 
-            var result = _customerController.Post(customer) as OkObjectResult;
+            var result = _customerController.Put(customer) as OkObjectResult;
             result.Should().NotBeNull();
             result.Value.Should().NotBeNull();
 
@@ -113,7 +112,8 @@ namespace Cibertec.WebApi.Tests
             var model = result.Value as Customer;
             model.Should().NotBeNull();
             model.Id.Should().BeGreaterThan(0);
-        }
+        }
+
 
     }
 }
