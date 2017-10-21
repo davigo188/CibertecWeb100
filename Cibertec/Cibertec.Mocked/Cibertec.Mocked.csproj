@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoFixture" Version="3.51.0" />
+    <PackageReference Include="AutoFixture" Version="4.0.0-alpha.269" />
     <PackageReference Include="Moq" Version="4.7.142" />
   </ItemGroup>
 

@@ -11,18 +11,15 @@ namespace Cibertec.Mocked
     public class UnitOfWorkMocked
     {
         private List<Customer> _customers;
-        private List<Order> _orders;
         public UnitOfWorkMocked()
         {
             _customers = Customers();
-            _orders = Orders();
         }
 
         public IUnitOfWork GetInstance()
         {
             var mocked = new Mock<IUnitOfWork>();
             mocked.Setup(u => u.Customers).Returns(CustomerRepositoryMocked());
-            mocked.Setup(o => o.Orders).Returns(OrderRepositoryMocked());
             return mocked.Object;
         }
 
@@ -37,18 +34,6 @@ namespace Cibertec.Mocked
             return customerMocked.Object;
         }
 
-        private IOrderRepository OrderRepositoryMocked()
-        {
-            var orderMocked = new Mock<IOrderRepository>();
-            orderMocked.Setup(o => o.GetList()).Returns(_orders);
-            orderMocked.Setup(o => o.Insert(It.IsAny<Order>())).Callback<Order>((o) => _orders.Add(o)).Returns<Order>(o => o.Id);
-            orderMocked.Setup(o => o.Update(It.IsAny<Order>())).Callback<Order>((o) => { _orders.RemoveAll(ord => ord.Id == o.Id); _orders.Add(o); }).Returns(true);
-            orderMocked.Setup(o => o.Delete(It.IsAny<Order>())).Callback<Order>((o) => _orders.RemoveAll(ord => ord.Id == o.Id)).Returns(true);
-            orderMocked.Setup(o => o.GetById(It.IsAny<int>())).Returns((int id) => _orders.FirstOrDefault(ord => ord.Id == id));
-            return orderMocked.Object;
-
-        }
-
         private List<Customer> Customers()
         {
             var fixture = new Fixture();
@@ -58,17 +43,6 @@ namespace Cibertec.Mocked
                 customers[i].Id = i + 1;
             }
             return customers;
-        }
-
-        private List<Order> Orders()
-        {
-            var fixture = new Fixture();
-            var orders = fixture.CreateMany<Order>(50).ToList();
-            for (int i = 0; i < orders.Count(); i++)
-            {
-                orders[i].Id = i + 1;
-            }
-            return orders;
         }
     }
 }
