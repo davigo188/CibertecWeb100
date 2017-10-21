@@ -7,7 +7,7 @@
 
         currentMonth: function () {
             var today = new Date();
-            return length(today.getMonth();
+            return length(today.getMonth());
         }
     };
     document.getElementById("date").innerHTML = cibertec.Index.currentYear() + ' ' + cibertec.Index.currentMonth();
