@@ -26,7 +26,7 @@
     padding-top: 10px; }
   body section {
     padding-top: 4rem;
-    margin-top: 4rem; }
+    margin-bottom: 4rem; }
 
 .headerlogo img {
   float: left;
@@ -112,4 +112,7 @@ nav {
       right: auto;
       top: auto;
       position: relative; } }
+
+input:invalid {
+  border: 2px solid red; }
 
