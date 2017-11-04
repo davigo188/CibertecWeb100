@@ -4,13 +4,11 @@
         play: function () {
             if (this.videoElement.paused) {
                 this.videoElement.play();
-
             }
         },
         pause: function () {
             if (this.videoElement.played) {
                 this.videoElement.pause();
-
             }
         },
         stop: function () {
