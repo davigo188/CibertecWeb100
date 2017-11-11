@@ -4,7 +4,7 @@
     angular.module('app',
         ['ui.router',
          'LocalStorageModule',
-         'ui-bootstrap'
+         'ui.bootstrap'
         ]);
 
 

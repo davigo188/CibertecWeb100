@@ -4,7 +4,7 @@
         <strong>OK</strong> The product was created properly.
     </div>
     <div>
-        <button ng-click="vm.create();" data-toggle="modal" datatarget="#modal-container"
+        <button ng-click="vm.create();" data-toggle="modal" data-target="#modal-container"
                 class="btn btn-success btn-sm">
             <span class="glyphicon glyphicon-plus"></span> Create New
             Product
@@ -24,11 +24,11 @@
                       package="{{product.package}}"
                       is-discontinued="product.isDiscontinued">
             <button ng-click="vm.getProduct(product.id); vm.edit();"
-                    data-toggle="modal" data-target="#modal-container" class="btn btnsuccess btn-sm">
+                    data-toggle="modal" data-target="#modal-container" class="btn btn-success btn-sm">
                 <span class="glyphicon glyphicon-edit"></span> Edit
             </button>
             <button ng-click="vm.getProduct(product.id); vm.delete();"
-                    data-toggle="modal" data-target="#modal-container" class="btn btndanger btn-sm">
+                    data-toggle="modal" data-target="#modal-container" class="btn btn-danger btn-sm">
                 <span class="glyphicon glyphicon-erase"></span> Delete
             </button>
         </product-card>

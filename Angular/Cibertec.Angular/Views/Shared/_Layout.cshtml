@@ -30,6 +30,8 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a ng-if="!vm.validate()" ui-sref="login" ui-sref-active="active">Login</a></li>
                     <li><a ng-if="vm.validate()" ng-click="vm.logout()" href="#" ui-sref-active="active">Logout</a></li>
+                    <li><a ng-if="vm.validate()" ui-sref="product" ui-sref-active="active">Product</a></li>
+
 
                 </ul>
             </div>
@@ -51,16 +53,27 @@
         <script src="~/libraries/angular/angular.js"></script>
         <script src="~/libraries/angular/angular-ui-router.js"></script>
         <script src="~/libraries/angular/angular-local-storage.js"></script>
-
+        <script src="~/libraries/angular/ui-bootstrap-tpls.js"></script>
 
         <script src="~/app/app.js"></script>
         <script src="~/app/app.config.js"></script>
         <script src="~/app/app.controller.js"></script>
         <script src="~/app/app.routes.js"></script>
+        <script src="~/app/app.interceptor.js"></script>
+
         <script src="~/app/shared/data.service.js"></script>
         <script src="~/app/shared/settings.service.js"></script>
         <script src="~/app/shared/authentication.service.js"></script>
+
         <script src="~/app/public/login/login.controller.js"></script>
+
+        <script src="~/app/components/modal/modal.directive.js"></script>
+
+        <script src="~/app/private/product/directives/product-card/product.card.js"></script>
+        <script src="~/app/private/product/directives/product-form/product.form.js"></script>
+
+        <script src="~/app/private/product/product.controller.js"></script>
+
 
     </environment>
 </body>
