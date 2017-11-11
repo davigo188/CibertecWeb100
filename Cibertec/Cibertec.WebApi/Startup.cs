@@ -79,9 +79,6 @@ namespace Cibertec.WebApi
             app.UseAuthentication();
 
             app.UseResponseCompression();
-
-
-
             app.UseMvc();
         }
     }

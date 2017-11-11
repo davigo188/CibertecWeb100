@@ -1,4 +1,5 @@
 ﻿using Cibertec.Models;
+using System.Collections.Generic;
 
 namespace Cibertec.Repositories.Northwind
 {
@@ -6,7 +7,8 @@ namespace Cibertec.Repositories.Northwind
     {
         Customer SearchByNames(string firstName, string lastName);
 
-
+        IEnumerable<Customer> PagedList(int startRow, int endRow);
+        int Count();
 
     }
 }

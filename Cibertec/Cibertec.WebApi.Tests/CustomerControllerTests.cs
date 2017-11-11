@@ -94,7 +94,7 @@ namespace Cibertec.WebApi.Tests
             {
                 Id = 1
             };
-            var result = _customerController.Delete(customer) as OkObjectResult;
+            var result = _customerController.Delete(customer.Id) as OkObjectResult;
             result.Should().NotBeNull();
             result.Value.Should().NotBeNull();
             var model = Convert.ToBoolean(result.Value);

@@ -21,6 +21,8 @@
         vm.currentPage = 1;
         vm.maxSize = 10;
         vm.itemsPerPage = 30;
+
+        vm.showDelete = false;
         //Funciones
         vm.getProduct = getProduct;
         vm.create = create;
@@ -125,6 +127,7 @@
             vm.modalFunction = null;
             vm.isDelete = false;        }        function productDelete() {
             vm.showCreate = false;
+            vm.showDelete = true; //
             vm.modalTitle = 'Delete Product';
             vm.modalButtonTitle = 'Delete';
             vm.readOnly = false;
