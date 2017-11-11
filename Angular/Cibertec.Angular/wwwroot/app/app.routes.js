@@ -15,10 +15,15 @@
                 url: "/login",
                 templateUrl: "app/public/login/index.html"
             })
-            .state("otherwise",{
+            .state("product", {
+                url: "/product",
+                templateUrl: 'app/private/product/index.html'
+            })
+            .state("otherwise", {
                 url: "/",
                 templateUrl: "app/home.html"
             });
+
     }
 
 })();

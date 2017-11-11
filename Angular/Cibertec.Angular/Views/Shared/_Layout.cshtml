@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Cibertec.Angular</title>
+    <title>Cibertec.Angular</title>
 
     <environment include="Development">
 
@@ -21,7 +21,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">Cibertec.Angular</a>
+                <a ui-sref="home" ui-sref-active="active"
+                   class="navbar-brand">Cibertec.Angular</a>
+
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -43,22 +45,21 @@
     </div>
 
     <environment include="Development">
-
+        <script src="~/libraries/jquery/jquery.js"></script>
+        <script src="~/libraries/bootstrap/js/bootstrap.js"></script>
 
         <script src="~/libraries/angular/angular.js"></script>
         <script src="~/libraries/angular/angular-ui-router.js"></script>
         <script src="~/libraries/angular/angular-local-storage.js"></script>
 
-        <script src="~/libraries/jquery/jquery.js"></script>
-        <script src="~/libraries/bootstrap/js/bootstrap.js"></script>
 
         <script src="~/app/app.js"></script>
-        <script src="~/app/app.routes.js"></script>
         <script src="~/app/app.config.js"></script>
         <script src="~/app/app.controller.js"></script>
+        <script src="~/app/app.routes.js"></script>
         <script src="~/app/shared/data.service.js"></script>
-        <script src="~/app/shared/authentication.service.js"></script>
         <script src="~/app/shared/settings.service.js"></script>
+        <script src="~/app/shared/authentication.service.js"></script>
         <script src="~/app/public/login/login.controller.js"></script>
 
     </environment>
