@@ -1,8 +1,8 @@
 ﻿(function () {
     'use strict';
     angular.module('app')
-        .directive('customerCard', customerCard);
-    function customerCard() {
+        .directive('supplierCard', supplierCard);
+    function supplierCard() {
         return {
             restrict: 'E',
             transclude: true,
@@ -11,8 +11,10 @@
                 companyName: '@',
                 contactName: '@',
                 contactTitle: '@',
+                city: '@',
                 country: '@',
-                phone: '@'
+                phone: '@',
+                fax: '@'
             },
             templateUrl: 'app/private/supplier/directives/supplier-card/supplier-card.html'
 

@@ -91,7 +91,7 @@ namespace Cibertec.WebApi.Tests
                 Id = 853
             };
 
-            var result = _orderController.Delete(order) as OkObjectResult;
+            var result = _orderController.Delete(order.Id) as OkObjectResult;
             result.Should().NotBeNull();
             result.Value.Should().NotBeNull();
             var model = Convert.ToBoolean(result.Value);
