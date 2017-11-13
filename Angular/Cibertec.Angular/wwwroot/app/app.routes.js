@@ -31,6 +31,10 @@
                 url: "/orderitem",
                 templateUrl: 'app/private/orderitem/index.html'
             })
+            .state("order", {
+                url: "/order",
+                templateUrl: 'app/private/order/index.html'
+            })
             .state("otherwise", {
                 url: "/",
                 templateUrl: "app/home.html"

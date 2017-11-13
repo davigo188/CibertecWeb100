@@ -34,6 +34,7 @@
                     <li><a ng-if="vm.validate()" ui-sref="customer" ui-sref-active="active">Customer</a></li>
                     <li><a ng-if="vm.validate()" ui-sref="supplier" ui-sref-active="active">Supplier</a></li>
                     <li><a ng-if="vm.validate()" ui-sref="orderitem" ui-sref-active="active">OrderItem</a></li>
+                    <li><a ng-if="vm.validate()" ui-sref="order" ui-sref-active="active">Order</a></li>
 
 
                 </ul>
@@ -80,13 +81,14 @@
         <script src="~/app/private/supplier/directives/supplier-form/supplier.form.js"></script>
         <script src="~/app/private/orderitem/directives/orderitem-card/orderitem.card.js"></script>
         <script src="~/app/private/orderitem/directives/orderitem-form/orderitem.form.js"></script>
-
+        <script src="~/app/private/order/directives/order-card/order.card.js"></script>
+        <script src="~/app/private/order/directives/order-form/order.form.js"></script>
 
         <script src="~/app/private/product/product.controller.js"></script>
         <script src="~/app/private/customer/customer.controller.js"></script>
         <script src="~/app/private/supplier/supplier.controller.js"></script>
         <script src="~/app/private/orderitem/orderitem.controller.js"></script>
-
+        <script src="~/app/private/order/order.controller.js"></script>
     </environment>
 </body>
 </html>
