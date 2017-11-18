@@ -17,7 +17,7 @@ describe('dataService',function(){
     it('should be Error',inject(function(dataService,$httpBackend){
         $httpBackend
         .expectGET('/error')
-        respond(400,'Error');
+        .respond(400,'Error');
 
         dataService.getData('/error').then(function(response){
             expect(response.status).toEqual(400);

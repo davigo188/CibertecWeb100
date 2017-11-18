@@ -82,7 +82,7 @@
 
     angular.module('app').service('appInterceptor', appInterceptor);
 
-    angular.$inject = ['$q', '$state', 'configService', 'localStorageService', '$route'];
+    appInterceptor.$inject = ['$q', '$state', 'configService', 'localStorageService'];
 
     function appInterceptor($q, $state, configService, localStorageService) {
         return {

@@ -13,11 +13,16 @@
         init();
 
         function init() {
-            if (configService.setLogin()) $state.go("Home");
+            if (configService.getLogin()) $state.go("Home");
             authenticationService.logout();
         }
         function login() {
-            authenticationService.login(vm.user);
+            authenticationService.login(vm.user).then(function (result) {
+                vm.showError = false;
+                $state.go("home");
+            }, function (error) {
+                vm.showError = true;
+            });
         }
 
     }
